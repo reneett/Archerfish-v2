@@ -1,5 +1,18 @@
-[gd_scene format=3 uid="uid://bkot6mmghcxlg"]
+[gd_scene load_steps=4 format=3 uid="uid://bkot6mmghcxlg"]
+
+[ext_resource type="Script" uid="uid://dwrq6b3ub1wca" path="res://Scripts/player.gd" id="1_6k836"]
+[ext_resource type="Texture2D" uid="uid://cvaelkp3wg4nc" path="res://Assets/Temp/PNG/Default/character_roundGreen.png" id="2_vbunw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbunw"]
 
 [node name="Level" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_6k836")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_vbunw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(573, 298)
+texture = ExtResource("2_vbunw")
